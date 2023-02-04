@@ -10,6 +10,7 @@ bitflags = { default-features = false, version = "1" }
 dashmap = { default-features = false, version = "5.3" }
 serde = { default-features = false, features = ["derive"], version = "1" }
 twilight-model = { default-features = false, version = "0.14.4" }
+redis = { version = "0.22.3", features = ["tokio-native-tls-comp"] }
 
 # Optional dependencies.
 twilight-util = { default-features = false, features = ["permission-calculator"], optional = true, version = "0.14.2" }
