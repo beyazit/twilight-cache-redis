@@ -6,3 +6,19 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+bitflags = { default-features = false, version = "1" }
+dashmap = { default-features = false, version = "5.3" }
+serde = { default-features = false, features = ["derive"], version = "1" }
+twilight-model = { default-features = false, version = "0.14.4" }
+
+# Optional dependencies.
+twilight-util = { default-features = false, features = ["permission-calculator"], optional = true, version = "0.14.2" }
+
+[dev-dependencies]
+futures = { default-features = false, version = "0.3" }
+static_assertions = { default-features = false, version = "1" }
+tokio = { default-features = false, features = ["macros", "rt-multi-thread"], version = "1.0" }
+twilight-gateway = { default-features = false, features = ["rustls-native-roots"] }
+
+[features]
+permission-calculator = ["dep:twilight-util"]
